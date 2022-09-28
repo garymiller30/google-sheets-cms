@@ -17,7 +17,7 @@ export default function IndexPage({ reasons = [] }) {
           {new Date().toLocaleString("local", { weekday: "long" })}
         </Text>
       </Text>
-      <Flex flexWrap="wrap">
+      <Flex flexWrap="wrap" w="100%" justifyContent="center">
         {reasons.map((day, idx) => (
           <Day key={idx} day={day} />
         ))}
