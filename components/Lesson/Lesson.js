@@ -17,7 +17,7 @@ export default function Lesson({ lesson = new Lesson() }) {
           </HStack>
           <Text as="i">{theme}</Text>
           <br />
-          <Text as="code" bg="blue.50">
+          <Text wordBreak="break-all" as="code" bg="blue.50">
             {link}
           </Text>
         </Box>
