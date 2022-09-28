@@ -5,7 +5,11 @@ import { getWhyNextReasons } from "../lib/api";
 export default function IndexPage({ reasons = [] }) {
   return (
     <>
-      <Text>Сьогодні: {new Date().toLocaleDateString()}</Text>
+      <Text align="center">
+        Сьогодні: {new Date().toLocaleDateString()}
+        {", "}
+        {new Date().toLocaleString("local", { weekday: "long" })}
+      </Text>
       <Flex flexWrap="wrap">
         {reasons.map((day, idx) => (
           <Day key={idx} day={day} />
