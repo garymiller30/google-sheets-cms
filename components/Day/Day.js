@@ -1,4 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  List,
+  ListItem,
+  OrderedList,
+  Text,
+} from "@chakra-ui/react";
 import Lesson from "./../../components/Lesson/Lesson";
 
 export default function Day({ day = new Day() }) {
@@ -7,9 +14,17 @@ export default function Day({ day = new Day() }) {
       <Text align="center" fontSize="3xl">
         {day.title}
       </Text>
-      {day.lessons.map((lesson, idx) => (
-        <Lesson key={idx} lesson={lesson} />
-      ))}
+      <List>
+        {day.lessons.map((lesson, idx) =>
+          lesson.subject ? (
+            <ListItem>
+              <Divider />
+              <Lesson lesson={lesson} />
+              <Divider />
+            </ListItem>
+          ) : null
+        )}
+      </List>
     </Box>
   );
 }

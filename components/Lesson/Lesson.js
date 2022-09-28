@@ -1,17 +1,25 @@
 import { Box, Flex, HStack, Spacer, Text } from "@chakra-ui/react";
 export default function Lesson({ lesson = new Lesson() }) {
-  const { time, teacher, theme, subject, link } = lesson;
+  const { time, teacher, theme, subject, link, timeStart, timeEnd } = lesson;
   return subject ? (
     <Box pt={2} pb={2}>
       <HStack>
-        <Text>{time}</Text>
+        <Box>
+          <Text>{timeStart}</Text>
+          <Text>{timeEnd}</Text>
+        </Box>
         <Box>
           <HStack>
-            <Text fontWeight="700">{subject}</Text>
+            <Text fontSize="larger" fontWeight="700">
+              {subject}
+            </Text>
             <Text>({teacher})</Text>
           </HStack>
-          <Text>{theme}</Text>
-          <Text bg="blue.50">{link}</Text>
+          <Text as="i">{theme}</Text>
+          <br />
+          <Text as="code" bg="blue.50">
+            {link}
+          </Text>
         </Box>
       </HStack>
     </Box>

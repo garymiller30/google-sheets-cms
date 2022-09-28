@@ -1,21 +1,28 @@
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Text } from "@chakra-ui/react";
 import Day from "../components/Day/Day";
 import { getWhyNextReasons } from "../lib/api";
 
 export default function IndexPage({ reasons = [] }) {
   return (
-    <>
-      <Text align="center">
+    <Flex
+      w="100%"
+      flexDirection="column"
+      justifyContent="space-evenly"
+      alignItems="stretch"
+    >
+      <Text fontSize="2xl" align="center" w="100%" h={10} bg="blue.100">
         Сьогодні: {new Date().toLocaleDateString()}
         {", "}
-        {new Date().toLocaleString("local", { weekday: "long" })}
+        <Text as="span" fontWeight="700">
+          {new Date().toLocaleString("local", { weekday: "long" })}
+        </Text>
       </Text>
       <Flex flexWrap="wrap">
         {reasons.map((day, idx) => (
           <Day key={idx} day={day} />
         ))}
       </Flex>
-    </>
+    </Flex>
   );
 }
 
