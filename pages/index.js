@@ -1,14 +1,17 @@
-import { Container, Flex } from "@chakra-ui/react";
+import { Container, Flex, Text } from "@chakra-ui/react";
 import Day from "../components/Day/Day";
 import { getWhyNextReasons } from "../lib/api";
 
 export default function IndexPage({ reasons = [] }) {
   return (
-    <Flex flexWrap="wrap">
-      {reasons.map((day, idx) => (
-        <Day key={idx} day={day} />
-      ))}
-    </Flex>
+    <>
+      <Text>Сьогодні: {new Date().toLocaleDateString()}</Text>
+      <Flex flexWrap="wrap">
+        {reasons.map((day, idx) => (
+          <Day key={idx} day={day} />
+        ))}
+      </Flex>
+    </>
   );
 }
 
