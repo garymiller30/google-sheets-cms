@@ -10,7 +10,7 @@ export default function Lesson({ lesson = new Lesson() }) {
         </Box>
         <Box>
           <HStack>
-            <Text fontSize="larger" fontWeight="700">
+            <Text fontSize="larger" fontWeight="700" textTransform="uppercase">
               {subject}
             </Text>
             <Text>({teacher})</Text>
