@@ -10,7 +10,16 @@ export default function IndexPage({ reasons = [] }) {
       justifyContent="space-evenly"
       alignItems="stretch"
     >
-      <Text fontSize="2xl" align="center" w="100%" h={10} bg="blue.100">
+      <Text
+        fontSize="2xl"
+        align="center"
+        w="100%"
+        h={10}
+        bg="blue.100"
+        position="sticky"
+        top="0"
+        left="0"
+      >
         Сьогодні: {new Date().toLocaleDateString()}
         {", "}
         <Text as="span" fontWeight="700">
