@@ -17,7 +17,7 @@ export default function Day({ day = new Day() }) {
       <List>
         {day.lessons.map((lesson, idx) =>
           lesson.subject ? (
-            <ListItem>
+            <ListItem key={idx}>
               <Divider />
               <Lesson lesson={lesson} />
               <Divider />

@@ -26,6 +26,10 @@ export default function IndexPage({ reasons = [] }) {
         <Text as="span" fontWeight="700">
           {new Date().toLocaleString("local", { weekday: "long" })}
         </Text>
+        <Text as="span">, розклад на: </Text>
+        <Text as="span" fontWeight="700">
+          03.10-07.10
+        </Text>
       </Text>
       <Flex flexWrap="wrap" w="100%" justifyContent="center">
         {reasons.map((day, idx) => (
