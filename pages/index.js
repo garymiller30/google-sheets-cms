@@ -4,39 +4,44 @@ import { getWhyNextReasons } from "../lib/api";
 
 export default function IndexPage({ reasons = [] }) {
   return (
-    <Flex
-      w="100%"
-      flexDirection="column"
-      justifyContent="space-evenly"
-      alignItems="stretch"
-    >
-      <Text
-        fontSize="2xl"
-        align="center"
+    <>
+      <header>
+        <title>Розклад занять 4-В</title>
+      </header>
+      <Flex
         w="100%"
-        pt={1}
-        pb={1}
-        bg="blue.100"
-        position="sticky"
-        top="0"
-        left="0"
+        flexDirection="column"
+        justifyContent="space-evenly"
+        alignItems="stretch"
       >
-        Сьогодні: {new Date().toLocaleDateString()}
-        {", "}
-        <Text as="span" fontWeight="700">
-          {new Date().toLocaleString("local", { weekday: "long" })}
+        <Text
+          fontSize="2xl"
+          align="center"
+          w="100%"
+          pt={1}
+          pb={1}
+          bg="blue.100"
+          position="sticky"
+          top="0"
+          left="0"
+        >
+          Сьогодні: {new Date().toLocaleDateString()}
+          {", "}
+          <Text as="span" fontWeight="700">
+            {new Date().toLocaleString("local", { weekday: "long" })}
+          </Text>
+          <Text as="span">, розклад на: </Text>
+          <Text as="span" fontWeight="700">
+            03.10-07.10
+          </Text>
         </Text>
-        <Text as="span">, розклад на: </Text>
-        <Text as="span" fontWeight="700">
-          03.10-07.10
-        </Text>
-      </Text>
-      <Flex flexWrap="wrap" w="100%" justifyContent="center">
-        {reasons.map((day, idx) => (
-          <Day key={idx} day={day} />
-        ))}
+        <Flex flexWrap="wrap" w="100%" justifyContent="center">
+          {reasons.map((day, idx) => (
+            <Day key={idx} day={day} />
+          ))}
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   );
 }
 
