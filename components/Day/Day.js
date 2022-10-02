@@ -1,11 +1,4 @@
-import {
-  Box,
-  Divider,
-  List,
-  ListItem,
-  OrderedList,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Divider, List, ListItem, Text } from "@chakra-ui/react";
 import Lesson from "./../../components/Lesson/Lesson";
 
 export default function Day({ day = new Day() }) {

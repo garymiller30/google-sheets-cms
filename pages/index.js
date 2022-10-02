@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import Day from "../components/Day/Day";
 import { getWhyNextReasons } from "../lib/api";
 

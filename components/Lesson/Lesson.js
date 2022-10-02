@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Spacer, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 export default function Lesson({ lesson = new Lesson() }) {
   const { time, teacher, theme, subject, link, timeStart, timeEnd } = lesson;
   return subject ? (
