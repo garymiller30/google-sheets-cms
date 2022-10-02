@@ -3,6 +3,8 @@ import Day from "../components/Day/Day";
 import { getWhyNextReasons } from "../lib/api";
 
 export default function IndexPage({ reasons = [] }) {
+  const today = new Date().toLocaleDateString();
+  const todayWeekDay = new Date().toLocaleString("local", { weekday: "long" });
   return (
     <>
       <header>
@@ -25,10 +27,10 @@ export default function IndexPage({ reasons = [] }) {
           top="0"
           left="0"
         >
-          Сьогодні: {new Date().toLocaleDateString()}
+          Сьогодні: {today}
           {", "}
           <Text as="span" fontWeight="700">
-            {new Date().toLocaleString("local", { weekday: "long" })}
+            {todayWeekDay}
           </Text>
           <Text as="span">, розклад на: </Text>
           <Text as="span" fontWeight="700">
