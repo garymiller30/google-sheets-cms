@@ -34,7 +34,7 @@ export default function IndexPage({ reasons = [] }) {
           </Text>
           <Text as="span">, розклад на: </Text>
           <Text as="span" fontWeight="700">
-            17.10-21.10
+            24.10-28.10
           </Text>
         </Text>
         <Flex flexWrap="wrap" w="100%" justifyContent="center">
