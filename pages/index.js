@@ -2,7 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import Day from "../components/Day/Day";
 import { getWhyNextReasons } from "../lib/api";
 
-export default function IndexPage({ reasons = [] }) {
+export default function IndexPage({ reasons = [], title }) {
   const today = new Date().toLocaleDateString();
   const todayWeekDay = new Date().toLocaleString("local", { weekday: "long" });
   return (
@@ -34,7 +34,7 @@ export default function IndexPage({ reasons = [] }) {
           </Text>
           <Text as="span">, розклад на: </Text>
           <Text as="span" fontWeight="700">
-            07.11-11.11
+            {title}
           </Text>
         </Text>
         <Flex flexWrap="wrap" w="100%" justifyContent="center">
@@ -52,7 +52,8 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      reasons,
+      reasons: reasons.days,
+      title: reasons.title,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
