@@ -4,7 +4,12 @@ import Lesson from "./../../components/Lesson/Lesson";
 export default function Day({ day = new Day() }) {
   return (
     <Box p={3} m={3} maxW={500} border="1px solid gray" borderRadius={10}>
-      <Text align="center" fontSize="3xl">
+      <Text
+        backgroundColor={"gray"}
+        color={"white"}
+        align="center"
+        fontSize="3xl"
+      >
         {day.title}
       </Text>
       <List>
@@ -15,7 +20,7 @@ export default function Day({ day = new Day() }) {
               <Lesson lesson={lesson} />
               <Divider />
             </ListItem>
-          ) : null
+          ) : null,
         )}
       </List>
     </Box>
